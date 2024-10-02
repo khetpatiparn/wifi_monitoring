@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal Strength</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        var socket = io();
+        socket.on('wifi_data', function(data) {
+            document.getElementById('ssid').textContent = data.ssid;
+            document.getElementById('bssid').textContent = data.bssid;
+            document.getElementById('signal').textContent = data.signal + 'dBm';
+        });
+    </script>
+</head>
+<body>
+    <h1>Signal Strength</h1>
+    <p>SSID: <span id="ssid">Loading...</span></p>
+    <p>BSSID: <span id="bssid">Loading...</span></p>
+    <p>Signal: <span id="signal">Loading...</span></p>
+</body>
+</html>
