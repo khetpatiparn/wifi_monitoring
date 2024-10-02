@@ -1,6 +1,6 @@
 # wifi_strength_monitoring
 
-### Step1 : create evn ###
+### Step1 : create env ###
 linux
 ```
 python3 -m venv .venv
