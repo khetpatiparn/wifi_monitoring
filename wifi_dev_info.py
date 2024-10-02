@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 from flask_socketio import SocketIO
 import subprocess
 
@@ -30,7 +30,7 @@ def get_NAME():
 def get_wifi_data():
     ssid = get_NAME()
     signal_level, bssid = get_signal_STR()
-    return jsonify({"ssid": ssid, "bssid": bssid, "signal": signal_level})
+    return {"ssid": ssid, "bssid": bssid, "signal": signal_level}
 
 # for real time
 def update_data():
